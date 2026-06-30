@@ -33,6 +33,8 @@ namespace TextFilter.Service
         {
             string text = repository.Read();
 
+            text = filter.Apply(text);
+
             // Return success/failure based on whether the text was successfully read, filtered and updated.
             return repository.Update(text);
         }

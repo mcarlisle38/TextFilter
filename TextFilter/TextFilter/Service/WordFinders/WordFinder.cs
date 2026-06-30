@@ -31,14 +31,14 @@ namespace TextFilter.Service.WordFinders
             // 2. Consume letters until the word ends
             while (index < text.Length && char.IsLetter(text[index]))
             {
-                index++;
                 wordEnd = index;
+                index++;
             }
 
             // 3. Return the extracted word string if found
             if (wordEnd >= wordStart)
             {
-                word = text.Substring(wordStart, wordEnd - wordStart);
+                word = text.Substring(wordStart, wordEnd - wordStart + 1);
             }
 
             return (word, wordStart, wordEnd);
