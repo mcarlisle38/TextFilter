@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TextFilter.DataAccess.Repositories;
+using TextFilter.Service.TextFilters.Filters;
 
 namespace TextFilter.Service
 {
@@ -12,13 +13,16 @@ namespace TextFilter.Service
         /// </summary>
         IRepository repository;
 
+        ITextFilter filter;
+
         /// <summary>
         /// Text filter service that performs filtering of text.
         /// </summary>
         /// <param name="repository">Repository to read/write to/from.</param>
-        internal TextFilterService(IRepository repository)
+        internal TextFilterService(IRepository repository, ITextFilter filter)
         {
             this.repository = repository;
+            this.filter = filter;
         }
 
         /// <summary>

@@ -3,6 +3,8 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using TextFilter.DataAccess.Repositories;
 using TextFilter.Service;
+using TextFilter.Service.TextFilters.Filters;
+using TextFilter.Service.WordFinders;
 
 public class Program
 {
@@ -10,7 +12,9 @@ public class Program
     {
         string filename = "Document.txt";
         IRepository repository = new TextFileConsoleRepository(filename);
-        ITextFilterable textFilter = new TextFilterService(repository);
+        IWordFinder wordFinder = new WordFinder();
+        ITextFilter filter = new VowelInMiddleFilter(wordFinder);
+        ITextFilterable textFilter = new TextFilterService(repository, filter);
 
         textFilter.PerformFilters();
     }
