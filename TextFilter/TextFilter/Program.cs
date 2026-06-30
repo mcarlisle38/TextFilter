@@ -1,16 +1,18 @@
 ﻿using System.IO.Pipelines;
 using System.Reflection;
 using System.Reflection.Metadata;
-using TextFilter.DataAccess;
 using TextFilter.DataAccess.Repositories;
+using TextFilter.Service;
 
 public class Program
 {
     static void Main(string[] args)
     {
-        IRepository repository = new TextFileConsoleRepository("Document.txt");
-        string text = repository.Read();
-        repository.Update(text);
+        string filename = "Document.txt";
+        IRepository repository = new TextFileConsoleRepository(filename);
+        ITextFilterable textFilter = new TextFilterService(repository);
+
+        textFilter.PerformFilters();
     }
 }
 
