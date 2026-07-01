@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TextFilter.Service.WordFinders
 {
-    public interface IWordFinder
+    public interface IWordFindable
     {
         (string word, int wordStart, int wordEnd) Next(string text, int index);
     }

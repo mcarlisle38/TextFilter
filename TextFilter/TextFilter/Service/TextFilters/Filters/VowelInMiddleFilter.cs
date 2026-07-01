@@ -5,10 +5,10 @@ using TextFilter.Service.WordFinders;
 
 namespace TextFilter.Service.TextFilters.Filters
 {
-    public class VowelInMiddleFilter : ITextFilter
+    public class VowelInMiddleFilter : IFilterable
     {
-        private IWordFinder wordFinder;
-        public VowelInMiddleFilter(IWordFinder wordFinder)
+        private IWordFindable wordFinder;
+        public VowelInMiddleFilter(IWordFindable wordFinder)
         {
             this.wordFinder = wordFinder;
         }

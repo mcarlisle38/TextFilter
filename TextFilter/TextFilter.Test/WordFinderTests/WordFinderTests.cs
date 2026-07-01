@@ -7,7 +7,7 @@ namespace TextFilter.Test.WordFinderTests
 {
     internal class WordFinderTests
     {
-        IWordFinder wordFinder;
+        IWordFindable wordFinder;
 
         [SetUp]
         public void Setup()
@@ -49,5 +49,7 @@ namespace TextFilter.Test.WordFinderTests
             //Assert
             Assert.That(word, Is.EqualTo(result));
         }
+
+        //TODO: Add tests for the Next method to check for the wordStart and wordEnd values returned.
     }
 }

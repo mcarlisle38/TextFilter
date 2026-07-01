@@ -12,9 +12,9 @@ public class Program
     {
         string filename = "Document.txt";
         IRepository repository = new TextFileConsoleRepository(filename);
-        IWordFinder wordFinder = new WordFinder();
-        ITextFilter filter = new VowelInMiddleFilter(wordFinder);
-        ITextFilterable textFilter = new TextFilterService(repository, filter);
+        IWordFindable wordFinder = new WordFinder();
+        TextFilter.Service.TextFilters.Filters.IFilterable filter = new VowelInMiddleFilter(wordFinder);
+        TextFilter.Service.ITextFilterable textFilter = new TextFilterService(repository, filter);
 
         textFilter.PerformFilters();
     }

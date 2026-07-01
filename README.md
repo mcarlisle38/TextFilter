@@ -20,4 +20,4 @@ Assumptions made due to no product owner to discuss with:
 	There will be no numeric characters in text input
 	There will only be the characters provided in the text ever used
 	Text input will not be very large so code extensibility will take precedence over app performance (each filter carried out one after the other making app O(3n) and not O(n) complexity)
-	
+	Filter1 will only filter out words with at least 3 characters in length as there are no 'middle' characters if shorter than that length

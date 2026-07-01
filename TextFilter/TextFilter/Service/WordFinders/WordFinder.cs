@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace TextFilter.Service.WordFinders
 {
-    public class WordFinder : IWordFinder
+    public class WordFinder : IWordFindable
     {
         /// <summary>
         /// Finds the next occurrence of a word in a text starting from a given index.

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TextFilter.Service.TextFilters.Filters
 {
-    public interface ITextFilter
+    public interface IFilterable
     {
         string Apply(string text);
     }
